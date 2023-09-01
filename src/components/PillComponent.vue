@@ -15,6 +15,7 @@ export default {
     .pill {
         margin: 10px;
         height: 55px;
+        width: fit-content;
         border-radius: 35px;
         color: #fff;
         font-size: 1.3rem;
