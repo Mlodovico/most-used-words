@@ -20,6 +20,8 @@
 
 <script>
 import PillComponent from './PillComponent';
+import { ipcRenderer } from 'electron';
+
 export default {
   components: {
     PillComponent,
@@ -35,7 +37,10 @@ export default {
     },
     methods: {
       processSubtitles() {
-        console.log(this.files);
+        ipcRenderer.send("files", "ALOO")
+        ipcRenderer.on('files', (event, data) => {
+          console.log(data);
+        })
       }
     }
 }
