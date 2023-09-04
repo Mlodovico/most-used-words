@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import PillComponent from './PillComponent';
-import { ipcRenderer } from 'electron';
+import PillComponent from "./PillComponent";
+import { ipcRenderer } from "electron";
 
 export default {
   components: {
@@ -30,14 +30,14 @@ export default {
         return {
             files: [],
             groupedWords: []
-        }
     },
-    methods: {
-      processSubtitles() {
-        let paths = this.files.map(file => file.path)
-        
-        ipcRenderer.send("process-subtitles", paths)
-        ipcRenderer.on('process-subtitles', (event, resp) => {
+  },
+  methods: {
+    processSubtitles() {
+      let paths = this.files.map(file => file.path)
+
+      ipcRenderer.send("process-subtitles", paths)
+      cRenderer.on("process-subtitles", (event, resp) => {
           console.log(resp);
           this.groupedWords = resp;
         })

@@ -9,7 +9,7 @@ module.exports = (words) => {
           obj[word] = 1;
         }
         return obj;
-      }, {})
+      }, {});
 
 const groupedWordsArray = Object.keys(groupedWords)
   .map((key) => ({ word: key, amount: groupedWords[key] }))
