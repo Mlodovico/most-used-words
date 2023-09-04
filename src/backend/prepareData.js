@@ -8,7 +8,7 @@ module.exports = (rows) => {
         .reduce(mergeRows)
         .split(" ")
         .map((word) => word.toLowerCase())
-        .map(word => word.replace("\"", ""))
+        .map(word => word.replace("\"", ""));
       resolve(data);
     } catch (err) {
       reject(err);
@@ -24,11 +24,13 @@ function filterValid(row) {
 }
 
 function removePonctuation(row) {
-  return row.replace(/[,?!:;.']/g, "");
+return row.replace(/[,?!:;.'-]/g, "");
+
 }
 
 function removeTags(row) {
-return row.replace(/(<[^>]+)>/g).trim();
+return row.replace(/(<[^>]+)>/g, "").trim();
+
 
 }
 

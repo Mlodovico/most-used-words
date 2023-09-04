@@ -11,6 +11,4 @@ pathToRows(paths)
   .then((groupedWords) => {
     event.reply("process-subtitles", groupedWords);
   });
-
-
 });
